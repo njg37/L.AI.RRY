@@ -16,7 +16,7 @@ function App() {
       <Header />
 
       {/* Main Content Wrapper */}
-      <div className="pt-20"> 
+      <div> 
         {/* pt-20 prevents content from hiding behind fixed navbar */}
         <Routes>
           <Route path="/" element={<Home />} />
