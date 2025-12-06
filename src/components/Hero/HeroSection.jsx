@@ -1,11 +1,32 @@
 import React from "react";
-import "../../styles/home.css";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
-    <section className="home-hero container">
-      <h1>Crack Your Competitive Exams With <span className="highlight">Confidence</span></h1>
-      <p className="subtitle">High-quality mocks, analytics and AI study plans.</p>
+    <section className="w-full bg-gradient-to-br from-teal-400 to-blue-500 rounded-b-3xl">
+      <div className="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between">
+
+        {/* LEFT */}
+        <div className="max-w-xl text-white">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            AI‑based <br /> Mock Tests
+          </h1>
+
+          <p className="text-lg mt-6 opacity-90">
+            Prepare for your exams with our AI-powered mock tests.
+          </p>
+
+          <Link
+            to="/login"
+            className="inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold shadow"
+          >
+            Get Started
+          </Link>
+        </div>
+
+        {/* RIGHT */}
+        <img src="/robot.png" alt="AI Robot" className="w-80 md:w-96 mt-12 md:mt-0" />
+      </div>
     </section>
   );
 }
