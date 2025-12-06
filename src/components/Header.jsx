@@ -11,7 +11,7 @@ export default function Header() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 select-none">
           <img
-            src="/src/assets/logo.png"
+            src="/public/images/logo.png"
             alt="L.AI.RRY"
             className="w-12 h-12 object-contain"
           />
