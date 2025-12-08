@@ -1,90 +1,64 @@
-export default function HowItWorks() {
+import React from 'react';
+import { Brain, Target } from 'lucide-react';
+
+const HowItWorks = () => {
   return (
-    <section className="max-w-3xl mx-auto px-6 mt-16">
-      <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
-        How to Learn with L.AI.RRY?
-      </h2>
-
-      <div className="space-y-10 relative">
-        {[
-          {
-            n: "1️⃣",
-            title: "Pick Your Exam",
-            text: "Choose the exam you want to prepare for from our wide list of categories.",
-          },
-          {
-            n: "2️⃣",
-            title: "Select Your Course",
-            text: "Pick a course that suits your learning style — videos, tests, or bundles.",
-          },
-          {
-            n: "3️⃣",
-            title: "Complete the Purchase",
-            text: "Finish the checkout in a few steps using your preferred payment method.",
-          },
-          {
-            n: "4️⃣",
-            title: "Go to My Courses",
-            text: "Instantly access all your purchased learning materials.",
-          },
-          {
-            n: "5️⃣",
-            title: "Start Learning",
-            text: "Watch lessons, attempt mock tests, and improve with smart analytics.",
-          },
-        ].map((step, i) => (
-          <div
-            key={i}
-            className="
-              bg-white p-6 rounded-xl border border-gray-200 shadow-sm
-              hover:-translate-y-1 hover:shadow-xl
-              transition-all duration-300
-              animate-[float_3s_ease-in-out_infinite]
-              relative overflow-hidden
-                 before:content-['']
-                before:absolute before:inset-0
-                before:bg-[radial-gradient(circle_at_center,rgba(0,128,0,0.50),transparent_90%)]
-                before:scale-0 hover:before:scale-150
-                before:opacity-0 hover:before:opacity-100
-                before:transition-all before:duration-700
-            "
-          >
-            {/* Water ripple hover effect */}
-            <span
-              className="
-                pointer-events-none absolute inset-0
-                bg-blue-100 opacity-0
-                rounded-xl scale-0
-                group-hover:opacity-40 group-hover:scale-150
-                transition-all duration-700
-              "
-            ></span>
-
-            <h3 className="text-lg font-semibold flex items-center gap-2 relative z-10">
-              <span className="text-blue-500 text-2xl">{step.n}</span>
-              {step.title}
+    <div className="bg-gray-200 py-16 px-4">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          How It Works
+        </h2>
+        
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+          {/* AI-Powered Analysis */}
+          <div className="flex flex-col items-center text-center max-w-xs">
+            <div className="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
+              <Brain className="w-12 h-12 text-white" />
+            </div>
+            <h3 className="font-semibold text-lg text-gray-800 mb-2">
+              AI-Powered Analysis
             </h3>
-
-            <p className="text-gray-600 mt-2 relative z-10">{step.text}</p>
-
-            {i < 4 && (
-              <div className="flex justify-center mt-4">
-                <span className="text-gray-400 text-3xl animate-bounce">
-                  ⬇️
-                </span>
-              </div>
-            )}
           </div>
-        ))}
-      </div>
 
-      {/* Float animation keyframes */}
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-6px); }
-        }
-      `}</style>
-    </section>
+          {/* Arrow */}
+          <div className="hidden md:block text-gray-400 text-4xl">→</div>
+
+          {/* Adaptive Practice */}
+          <div className="flex flex-col items-center text-center max-w-xs">
+            <div className="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
+              <Target className="w-12 h-12 text-white" />
+            </div>
+            <h3 className="font-semibold text-lg text-gray-800 mb-2">
+              Adaptive Practice
+            </h3>
+          </div>
+
+          {/* Arrow */}
+          <div className="hidden md:block text-gray-400 text-4xl">→</div>
+
+          {/* Students Illustration */}
+          <div className="flex items-center justify-center">
+            <div className="relative w-64 h-48">
+              {/* Placeholder for illustration - you can replace with actual image */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-pink-500 rounded-2xl flex items-center justify-center">
+                <div className="text-white text-center">
+                  <div className="text-6xl mb-2">👨‍🎓👩‍🎓</div>
+                  <div className="text-sm font-medium">Happy Students Learning</div>
+                </div>
+              </div>
+              {/* Floating elements */}
+              <div className="absolute -top-2 -right-2 bg-blue-400 text-white rounded-lg p-2 text-xs shadow-lg">
+                📊 Stats
+              </div>
+              <div className="absolute -bottom-2 -left-2 bg-green-400 text-white rounded-lg p-2 text-xs shadow-lg">
+                ✓ Progress
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default HowItWorks;
