@@ -1,21 +1,97 @@
 @import "tailwindcss";
-/* 
-.ripple-hover {
-  position: relative;
-  overflow: hidden;
+
+/* ---------------how it works */
+/* Fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
-.ripple-hover::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 70%);
-  opacity: 0;
-  transform: scale(0);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+/* Fade-in slower */
+@keyframes fadeInSlow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeInSlow {
+  animation: fadeInSlow 1.5s ease-out forwards;
 }
 
-.ripple-hover:hover::after {
+/* Floating effect (subtle up-down) */
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+.animate-floating {
+  animation: floating 4s ease-in-out infinite;
+}
+
+/* ----ExamsCovered Animation */
+
+@keyframes fade-slide-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes breath {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.7s ease-out forwards;
+}
+
+.animate-breath {
+  animation: breath 4s ease-in-out infinite;
+}
+
+.animate-breath-delayed {
+  animation: breath 4.5s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+/* ----------dots color----------- */
+/* inactive dots */
+.slick-dots li button:before {
+  color: #a3a3a3 !important; /* light gray */
   opacity: 1;
-  transform: scale(4);
+}
+
+/* active dot */
+.slick-dots li.slick-active button:before {
+  color: #4f46e5 !important; /* indigo-600 or your theme color */
+  opacity: 1;
+}
+/* -----------slider arrow --------------------------------- */
+/* .slick-slider .slick-prev:before,
+.slick-slider .slick-next:before{
+color: #4285f4;
+font-size: 20px;
+
+}
+.slick-slider .slick-next:before{
+  margin-left: -35px;
 } */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+
+.clip-triangle {
+  clip-path: polygon(20% 0%, 0% 100%, 10000% 100%);
+}

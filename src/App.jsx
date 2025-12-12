@@ -9,11 +9,12 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import Footer from "./components/Footer.jsx";
-
+import { Navbar } from "./components/Navbar.jsx";
 function App() {
   return (
     <Router>
-      <Header />
+     <Header/>
+     
 
       {/* Main Content Wrapper */}
 

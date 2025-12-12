@@ -1,89 +1,68 @@
-import React from 'react';
-import { ChevronUp, ChevronDown } from 'lucide-react';
+import React from "react";
+import { useInView } from "../hooks/useInView";
+import {
+  Building,
+  FileText,
+  Award,
+} from "lucide-react";
+
+import ExamsSliderView from "../components/ExamsSliderView";
 
 const ExamsCovered = () => {
-  const exams = [
-    {
-      id: 1,
-      title: 'Banking &\nInsurance',
-      description: 'LA-LIFE regarding based our store significantly',
-      buttonText: 'Basic',
-      bgColor: 'bg-amber-400',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop'
-    },
-    {
-      id: 2,
-      title: 'UPSC\nServices',
-      description: 'LA-LIFE Upload workload our store exclusively AKS-OS Default',
-      buttonText: 'Basic',
-      bgColor: 'bg-blue-500',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop'
-    },
-    {
-      id: 3,
-      title: 'OBI PO\nStatistics',
-      description: 'LA-LIFE ethical Jak its-arrays Starting regularly',
-      buttonText: 'Build',
-      bgColor: 'bg-red-500',
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop'
-    }
-  ];
+  // const { ref, isVisible } = useInView({ threshold: 0.2 });
+
+  // const exams = [
+  //   { id: 1, title: "SBI PO", icon: Building },
+  //   { id: 2, title: "SBI Clerk", icon: FileText },
+  //   { id: 3, title: "IBPS RRB Clerk", icon: FileText },
+  //   { id: 4, title: "IBPS RRB PO", icon: Award },
+  //   { id: 5, title: "IBPS PO", icon: Award },
+  //   { id: 6, title: "IBPS Clerk", icon: FileText },
+  // ];
 
   return (
-    <div className="bg-slate-900 py-8 px-4 h-[80vh] flex items-center justify-center">
-      <div className="max-w-4xl w-full">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <ChevronUp className="text-amber-400 w-6 h-6" />
-          <h2 className="text-white text-2xl font-semibold">Exams Covered</h2>
-          <div className="w-6"></div>
+    <div className="items-start bg-transparent  backdrop-blur-sm  -pd-100">
+      {/* Heading */}
+      {/* <div className="pt-50">
+        <h2 className="text-4xl font-bold text-left text-gray-800">
+          Exams Coverage
+        </h2> */}
+      {/* </div> */}
+              <div className="">
+          <ExamsSliderView />
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          {exams.map((exam) => (
-            <div
-              key={exam.id}
-              className={`${exam.bgColor} rounded-2xl p-6 relative overflow-hidden`}
-            >
-              {/* Profile Image */}
-              <div className="flex items-start gap-3 mb-4">
-                <img
-                  src={exam.image}
-                  alt="Instructor"
-                  className="w-12 h-12 rounded-full object-cover border-2 border-white"
-                />
-                <div className="flex-1">
-                  <h3 className="text-slate-900 font-bold text-lg leading-tight whitespace-pre-line">
-                    {exam.title}
-                  </h3>
-                </div>
+      {/* Static Cards Grid */}
+      {/* <div ref={ref} className="bg-[#ebf0f4] pt-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+          {exams.map((exam, index) => {
+            const Icon = exam.icon;
+
+            return (
+              <div
+                key={exam.id}
+                className={`
+                  bg-[#1f3453] rounded-lg p-4 h-15 border-[#4285f4] border-2
+                  flex items-center justify-start gap-3
+                  shadow-md hover:shadow-xl
+                  transition-all duration-700 transform
+                  hover:-translate-y-1
+                  ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+                `}
+                style={{ transitionDelay: `${index * 0.1}s` }}
+              >
+                <Icon className="w-10 h-6 text-white" />
+                <h3 className="text-white font-semibold text-sm leading-tight">
+                  {exam.title}
+                </h3>
               </div>
-
-              {/* Description */}
-              <p className="text-slate-800 text-xs mb-6 leading-relaxed">
-                {exam.description}
-              </p>
-
-              {/* Button */}
-              <button className="bg-white text-slate-900 px-6 py-2 rounded-full text-sm font-semibold hover:bg-slate-50 transition-colors">
-                {exam.buttonText}
-              </button>
-
-              {/* Decorative circles */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-white opacity-10 rounded-full"></div>
-              <div className="absolute -top-10 -right-5 w-20 h-20 bg-white opacity-10 rounded-full"></div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Bottom Navigation */}
-        <div className="flex items-center justify-between">
-          <div className="w-6 h-6 border-2 border-amber-400 rounded"></div>
-          <ChevronDown className="text-amber-400 w-6 h-6" />
-          <div className="w-6 h-6"></div>
-        </div>
-      </div>
+        {/* Slider Section (Correct Location) */}
+
+      {/* </div>  */}
     </div>
   );
 };
