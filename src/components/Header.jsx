@@ -1,53 +1,109 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 0);
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   return (
-    <header className="w-full py-2 sticky top-0 z-50  ">
-      <div className="w-full pr-20 mx-8 flex bg-transparent justify-between">
-
-        {/* Logo */}
-        <Link to="/" className="flex items-center select-none ">
+    <header
+      className={`w-full top-0 left-0 z-50 fixed transition-colors duration-500 ${
+        scrolled ? "bg-white shadow-lg" : "bg-transparent"
+      }`}
+    >
+      <div className="flex justify-between items-center px-8 py-2 max-[900px]:px-4">
+        <Link to="/" className="flex items-center select-none">
           <img
             src="/public/images/logo.png"
             alt="L.AI.RRY"
-            className="w-12 h-12 object-contain"
+            className="w-12 h-12 max-[900px]:w-10 max-[900px]:h-10"
           />
-           <span className="logo-text font-bold text-green-500">L.AI.RRY</span>
+          <span className="font-bold ml-2 transition-colors duration-500">
+            <span className="text-blue-500">L.</span>
+            <span className="text-black">AI</span>
+            <span className="text-blue-500">.RRY</span>
+          </span>
         </Link>
 
-        {/* Navigation */}
-        {/* <nav
-          className={`flex items-center gap-7 transition-all duration-300 
-          max-[900px]:absolute max-[900px]:top-[70px] max-[900px]:right-0 max-[900px]:flex-col 
-          max-[900px]:w-[200px] max-[900px]:bg-white max-[900px]:border-l max-[900px]:border-b 
-          max-[900px]:border-gray-200 max-[900px]:p-5 
-          ${open ? "max-[900px]:flex" : "max-[900px]:hidden"}`}
-        > */}
-        <nav className="flex items-center gap-7">
-          <Link className="text-white uppercase font-medium hover:text-blue-500" to="/">Home</Link>
-          <Link className="text-white uppercase font-medium hover:text-blue-500" to="/about">About</Link>
-          <Link className="text-white uppercase font-medium hover:text-blue-500" to="/pricing">Pricing</Link>
-          <Link className="text-white uppercase font-medium hover:text-blue-500" to="/contact">Contact</Link>
-
+        {/* Desktop Navigation */}
+        <nav
+          className={`hidden md:flex items-center gap-7 transition-colors duration-500 ${
+            scrolled ? "text-black" : "text-white"
+          }`}
+        >
+          <Link to="/" className="flex items-center h-full">
+            Home
+          </Link>
+          <Link to="/about" className="flex items-center h-full">
+            About
+          </Link>
+          <Link to="/pricing" className="flex items-center h-full">
+            Pricing
+          </Link>
+          <Link to="/contact" className="flex items-center h-full">
+            Contact
+          </Link>
           <Link
             to="/learn"
-            className="bg-green-500  text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600"
+            className="flex items-center bg-green-500 px-4 py-2 rounded-lg hover:bg-blue-600 transition"
           >
-            Sign-in
+            Get Started
           </Link>
         </nav>
 
-        {/* Mobile toggle */}
+        {/* Mobile Menu Button */}
         <button
-          className="hidden max-[900px]:block text-3xl cursor-pointer"
+          className={`block md:hidden text-3xl ${
+            scrolled ? "text-black" : "text-white"
+          }`}
           onClick={() => setOpen(!open)}
         >
           ☰
         </button>
 
+        {/* Mobile Navigation */}
+        <nav
+          className={`absolute top-full right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg flex flex-col gap-4 p-4 transition-all duration-300 md:hidden ${
+            open ? "block" : "hidden"
+          }`}
+        >
+          <Link to="/" className="text-black font-medium hover:text-green-500">
+            Home
+          </Link>
+          <Link
+            to="/about"
+            className="text-black font-medium hover:text-green-500"
+          >
+            About
+          </Link>
+          <Link
+            to="/pricing"
+            className="text-black font-medium hover:text-green-500"
+          >
+            Pricing
+          </Link>
+          <Link
+            to="/contact"
+            className="text-black font-medium hover:text-green-500"
+          >
+            Contact
+          </Link>
+          <Link
+            to="/learn"
+            className="bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-600"
+          >
+            Sign-in
+          </Link>
+        </nav>
       </div>
     </header>
   );

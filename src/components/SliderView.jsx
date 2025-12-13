@@ -11,8 +11,8 @@ import ExamsCoveredCard from "./ExamsCoveredCard";
 
 const SliderView = () => {
   var settings = {
-    dots: true,
-
+    dots: false,
+    arrows:false,
     infinite: true,
     speed: 5000 ,
     slidesToShow: 4,
@@ -22,7 +22,7 @@ const SliderView = () => {
     pauseOnHover: false,
       
     cssEase: "linear",
-  };
+  
   responsive: [
     {
       breakpoint: 1024,
@@ -36,8 +36,8 @@ const SliderView = () => {
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 1,
+        slidesToScroll: 1,
       },
     },
     {
@@ -47,10 +47,11 @@ const SliderView = () => {
         slidesToScroll: 1,
       },
     },
-  ];
+  ]};
   return (
-    <div className="  py-24 ">
-      <div className=" ">
+    <div>
+    <div className="  pt-15 ">
+      
         {/* <Slider {...settings}> */}
         {/* {HeroSection4CardData.map(heroSection4CardData=><Card heroSection4CardData={heroSection4CardData} />)} */}
         {/* <div className=''>
@@ -80,7 +81,10 @@ const SliderView = () => {
 
         </Slider>
 
-      </div>
+      
+    </div>
+    
+    
     </div>
   );
 };

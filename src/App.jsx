@@ -12,8 +12,9 @@ import Footer from "./components/Footer.jsx";
 import { Navbar } from "./components/Navbar.jsx";
 function App() {
   return (
-    <Router>
-     <Header/>
+    // <Router>
+    <>
+     
      
 
       {/* Main Content Wrapper */}
@@ -29,7 +30,8 @@ function App() {
         </Routes>
 
       <Footer/>
-    </Router>
+      </>
+    // </Router>
   );
 }
 

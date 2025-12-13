@@ -8,49 +8,70 @@ import HowItWork from "../HomeSections/HowItWork.jsx";
 import ExamsCovered from "../HomeSections/ExamsCovered.jsx";
 import FAQ from "../HomeSections/FAQ.jsx";
 import HeroSection4 from "../HomeSections/HeroSection4.jsx";
-import Pricing from "./Pricing.jsx"
+import Pricing from "./Pricing.jsx";
 import Herosection5 from "../HomeSections/Herosection5.jsx";
 import Testimonial from "../HomeSections/Testimonial.jsx";
-import ExamSection from "../HomeSections/ExamSection.jsx"
-import SubsidiaryLogos from "../HomeSections/SubsidiaryLogos.jsx"
+import ExamSection from "../HomeSections/ExamSection.jsx";
+import SubsidiaryLogos from "../HomeSections/SubsidiaryLogos.jsx";
+import JoinUs from "../HomeSections/JoinUs.jsx";
+
 export default function Home() {
   return (
-    <div className="w-full bg-[#ebf0f4] font-sans -pt-10">
-      <Herosection5/>
-      <div className="">
-         <ExamsCovered />
-      </div>
-      <div >
-         <HowItWork />
-      </div>
-      <div className="">
-        <ExamSection/>
-      </div>
+    <div className="w-full font-sans">
       
-      {/* <HeroSection /> */}
-      <div className="grid grid-cols-2  m-10 gap-8">
-        <div>
-          {/* <HowItWork /> */}
+      {/* HERO SECTION — behind transparent header */}
+      <section className="min-h-screen bg-gradient-to-r from-blue-700 to-purple-700">
+        <Herosection5 />
+      </section>
+
+      {/* PAGE CONTENT */}
+      <section className="bg-[#ebf0f4]">
+
+        <div className="">
+          <ExamsCovered />
         </div>
+
         <div>
-          {/* <ExamsCovered /> */}
+          <HowItWork />
         </div>
-      </div>
-{/* <div className="  m-10 mt-30 gap-8">
-      <WhySection />
-      </div> */}
-{/* <div  className="  m-10 mt-30 gap-8">
-<HeroSection4/>
-</div> */}
-{/* <div>
-  <Herosection5/>
-</div> */}
-<div>
-  <Testimonial/>
-</div>
-      {/* <Pricing/> */}
-      <FAQ />
-      <SubsidiaryLogos/>
+
+        <div className="">
+          <ExamSection />
+        </div>
+
+        {/* <HeroSection /> */}
+        {/* <div className="grid grid-cols-2  m-10 gap-8">
+          <div>
+            {/* <HowItWork /> */}
+          {/* </div> */}
+          {/* <div> */}
+            {/* <ExamsCovered /> */}
+          {/* </div> */}
+        {/* </div> */} 
+
+        {/* <div className="m-10 mt-30 gap-8">
+          <WhySection />
+        </div> */}
+
+        {/* <div className="m-10 mt-30 gap-8">
+          <HeroSection4/>
+        </div> */}
+
+        {/* <div>
+          <Herosection5/>
+        </div> */}
+
+        <JoinUs />
+
+        <div>
+          <Testimonial />
+        </div>
+
+        {/* <Pricing/> */}
+
+        <FAQ />
+        <SubsidiaryLogos />
+      </section>
     </div>
   );
 }

@@ -9,7 +9,7 @@ const FAQCard = ({ title, description }) => {
     <div
       ref={ref}
       className={`
-        bg-white p-4 rounded-xl border border-gray-100  
+        bg-white p-4 rounded-xl border border-green-300  
         transform transition-all duration-700
         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
         hover:shadow-2xl 
@@ -21,7 +21,7 @@ const FAQCard = ({ title, description }) => {
           {title}
         </h3>
         <button 
-          className="text-blue-500 font-bold text-2xl leading-none w-8 h-8 flex items-center justify-center hover:bg-blue-50 rounded-full transition-colors"
+          className="text-green-500 font-bold text-2xl leading-none w-8 h-8 flex items-center justify-center hover:bg-blue-50 rounded-full transition-colors"
         >
           {isOpen ? '−' : '+'}
         </button>
@@ -51,7 +51,7 @@ const FAQ = () => {
       title: "Are personalized study plans?",
       description: "Yes, our algorithm creates a custom path based on your initial diagnostic test and ongoing performance.",
     },
-        {
+    {
       title: "What competitive exams cover?",
       description: "We provide comprehensive coverage for DSI, PO, and Shire competitive exams with specific modules designed for each track.",
     },
@@ -63,18 +63,17 @@ const FAQ = () => {
       title: "Are personalized study plans?",
       description: "Yes, our algorithm creates a custom path based on your initial diagnostic test and ongoing performance.",
     },
-    
   ];
 
   return (
-    <div className="bg-yellow-100 pt-25 relative ">
+    <div className="bg-white pt-25 relative">
       {/* Manual position title */}
       <h2 className="text-4xl font-bold text-[#1A2B49] absolute top-20 left-10">
         Frequently Asked Questions
       </h2>
 
-      <section className="w-[1426px] ml-10 pb-30 pt-20  ">
-        <div className="grid grid-cols-2 gap-6  ">
+      <section className="w-full max-w-[1426px] mx-auto pb-30 pt-20 px-4 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {faqs.map((faq, index) => (
             <FAQCard key={index} {...faq} />
           ))}

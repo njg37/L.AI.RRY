@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-/* ---------------how it works */
+/* ---------------how it works
 /* Fade-in */
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
@@ -94,4 +94,19 @@ body {
 
 .clip-triangle {
   clip-path: polygon(20% 0%, 0% 100%, 10000% 100%);
+} */ */
+{
+
+}
+
+/* In your global CSS (index.css / tailwind.css) */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }

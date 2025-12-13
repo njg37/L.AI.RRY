@@ -3,7 +3,7 @@ import StarRating from "./StarRating";
 const TestimonialCard = ({ testimonialData }) => {
   return (
     <div className="gap-5">
-    <div className="bg-gray-100 border border-green-500 overflow-hidden rounded-2xl drop-shadow-md h-[330px] flex flex-col  ">
+    <div className="bg-gray-100 border border-green-500 overflow-hidden rounded-2xl drop-shadow-md h-[290px] flex flex-col  ">
       <img
         key={testimonialData.id}
         src={testimonialData.linkImg}

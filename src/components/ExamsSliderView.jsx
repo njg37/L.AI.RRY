@@ -21,7 +21,7 @@ const ExamsSliderView = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
         },
       },
       {
@@ -33,14 +33,14 @@ const ExamsSliderView = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
         },
       },
     ],
   };
 
   return (
-    <div className="-mt-22 border-t border-green-500 ">
+    <div className="-mt-22 ">
       <Slider {...settings}>
         {ExamsCoveredData.map((item) => (
           <div key={item.id} className="px-3 ">

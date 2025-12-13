@@ -14,8 +14,8 @@ export const TestimonialData=[
         id:2,
         title:'The detailed performance breakdown and topic-wise suggestions are amazing. It feels like having a personal coach guiding me step-by-step.',
         category:'Sanjana Kar',
-        rating:2,
-        rateScore:"2/5",
+        rating:4,
+        rateScore:"4/5",
         
         linkImg:'../../public/images/HeroSection4 Image2.jpg',
         date:"11/12/2025"
@@ -34,8 +34,8 @@ export const TestimonialData=[
         id:4,
         title:'The mock tests are exactly exam-level, and the AI reports show exactly where to improve. My confidence boosted a lot!',
         category:'Megha Das',
-        rating:3,
-        rateScore:"3/5",
+        rating:4,
+        rateScore:"4/5",
         
         linkImg:'../../public/images/HeroSection4 Image4.jpg',
         date:"11/12/2025"
@@ -54,8 +54,8 @@ export const TestimonialData=[
         id:2,
         title:'The detailed performance breakdown and topic-wise suggestions are amazing. It feels like having a personal coach guiding me step-by-step.',
         category:'Sanjana Kar',
-        rating:2,
-        rateScore:"2/5",
+        rating:4,
+        rateScore:"4/5",
         
         linkImg:'../../public/images/HeroSection4 Image2.jpg',
         date:"11/12/2025"
@@ -74,8 +74,8 @@ export const TestimonialData=[
         id:4,
         title:'The mock tests are exactly exam-level, and the AI reports show exactly where to improve. My confidence boosted a lot!',
         category:'Megha Das',
-        rating:3,
-        rateScore:"3/5",
+        rating:4,
+        rateScore:"4/5",
         
         linkImg:'../../public/images/HeroSection4 Image4.jpg',
         date:"11/12/2025"

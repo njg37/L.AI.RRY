@@ -21,7 +21,7 @@ const ExamsCovered = () => {
   // ];
 
   return (
-    <div className="items-start bg-transparent  backdrop-blur-sm  -pd-100">
+    <div className="items-start bg-white  backdrop-blur-sm mt-1">
       {/* Heading */}
       {/* <div className="pt-50">
         <h2 className="text-4xl font-bold text-left text-gray-800">
