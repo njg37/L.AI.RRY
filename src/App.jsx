@@ -16,7 +16,7 @@ function App() {
       {/* SNAP SCROLL CONTAINER */}
       <div 
       id="scroll-container"
-      style={{ "--header-h": "64px" }}
+      
       className="h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth">
         <Routes>
           <Route path="/" element={<Home />} />

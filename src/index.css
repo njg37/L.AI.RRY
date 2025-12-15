@@ -109,4 +109,23 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Sets --header-h for scroll container: 56px on mobile/tablet, 64px on desktop, with smooth snap scrolling */
+
+#scroll-container {
+  --header-h: 56px; /* default for mobile/tablet */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px) {
+  /* desktop */
+  #scroll-container {
+    --header-h: 64px;
+  }
+}
+
+
 
