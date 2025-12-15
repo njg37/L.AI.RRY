@@ -2,22 +2,31 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-useEffect(() => {
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 0);
-  };
+  const [scrolled, setScrolled] = useState(false);
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+  useEffect(() => {
+    const scrollContainer = document.getElementById("scroll-container");
+
+    if (!scrollContainer) return;
+
+    const handleScroll = () => {
+      setScrolled(scrollContainer.scrollTop > 50);
+    };
+
+    scrollContainer.addEventListener("scroll", handleScroll);
+
+    return () => {
+      scrollContainer.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
 
   return (
     <header
-      className={`w-full top-0 left-0 z-50 fixed transition-colors duration-500 ${
-        scrolled ? "bg-white shadow-lg" : "bg-transparent"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
       <div className="flex justify-between items-center px-8 py-2 max-[900px]:px-4">

@@ -63,6 +63,14 @@ const FAQ = () => {
       title: "Are personalized study plans?",
       description: "Yes, our algorithm creates a custom path based on your initial diagnostic test and ongoing performance.",
     },
+        {
+      title: "What subjects",
+      description: "Our curriculum covers Quantitative Aptitude, Logical Reasoning, and specialized technical subjects required for your exam.",
+    },
+    {
+      title: "Are personalized study plans?",
+      description: "Yes, our algorithm creates a custom path based on your initial diagnostic test and ongoing performance.",
+    },
   ];
 
   return (
@@ -72,8 +80,8 @@ const FAQ = () => {
         Frequently Asked Questions
       </h2>
 
-      <section className="w-full max-w-[1426px] mx-auto pb-30 pt-20 px-4 ">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+      <section className="w-full max-w-[1426px] mx-auto pb-38 pt-20 px-4 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
           {faqs.map((faq, index) => (
             <FAQCard key={index} {...faq} />
           ))}

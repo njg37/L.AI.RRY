@@ -12,26 +12,22 @@ import Footer from "./components/Footer.jsx";
 import { Navbar } from "./components/Navbar.jsx";
 function App() {
   return (
-    // <Router>
     <>
-     
-     
-
-      {/* Main Content Wrapper */}
-
-        {/* pt-20 prevents content from hiding behind fixed navbar */}
+      {/* SNAP SCROLL CONTAINER */}
+      <div 
+      id="scroll-container"
+      style={{ "--header-h": "64px" }}
+      className="h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth">
         <Routes>
           <Route path="/" element={<Home />} />
-          
-          
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
-          
         </Routes>
+      <Footer />
+      </div>
 
-      <Footer/>
-      </>
-    // </Router>
+      {/* NORMAL FLOW FOOTER (NO SNAP) */}
+    </>
   );
 }
 

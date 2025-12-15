@@ -1,77 +1,49 @@
 import React from "react";
-import HeroSection from "../HomeSections/HeroSection.jsx";
-import SearchBar from "../HomeSections/SearchBar.jsx";
-import PopularExams from "../HomeSections/PopularExams.jsx";
-import WhySection from "../HomeSections/WhySection.jsx";
-import ExploreFeatures from "../HomeSections/ExploreFeatures.jsx";
-import HowItWork from "../HomeSections/HowItWork.jsx";
-import ExamsCovered from "../HomeSections/ExamsCovered.jsx";
-import FAQ from "../HomeSections/FAQ.jsx";
-import HeroSection4 from "../HomeSections/HeroSection4.jsx";
-import Pricing from "./Pricing.jsx";
 import Herosection5 from "../HomeSections/Herosection5.jsx";
-import Testimonial from "../HomeSections/Testimonial.jsx";
+import ExamsCovered from "../HomeSections/ExamsCovered.jsx";
+import HowItWork from "../HomeSections/HowItWork.jsx";
 import ExamSection from "../HomeSections/ExamSection.jsx";
-import SubsidiaryLogos from "../HomeSections/SubsidiaryLogos.jsx";
 import JoinUs from "../HomeSections/JoinUs.jsx";
+import Testimonial from "../HomeSections/Testimonial.jsx";
+import FAQ from "../HomeSections/FAQ.jsx";
+import SubsidiaryLogos from "../HomeSections/SubsidiaryLogos.jsx";
 
 export default function Home() {
   return (
-    <div className="w-full font-sans">
-      
-      {/* HERO SECTION — behind transparent header */}
-      <section className="min-h-screen bg-gradient-to-r from-blue-700 to-purple-700">
+    <>
+      <section className="snap-start scroll-mt-[82px] bg-gradient-to-r from-blue-700 to-purple-700">
         <Herosection5 />
       </section>
 
-      {/* PAGE CONTENT */}
-      <section className="bg-[#ebf0f4]">
+      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+        <ExamsCovered />
+      </section>
 
-        <div className="">
-          <ExamsCovered />
-        </div>
+      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+        <HowItWork />
+      </section>
 
-        <div>
-          <HowItWork />
-        </div>
+      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+        <ExamSection />
+      </section>
 
-        <div className="">
-          <ExamSection />
-        </div>
-
-        {/* <HeroSection /> */}
-        {/* <div className="grid grid-cols-2  m-10 gap-8">
-          <div>
-            {/* <HowItWork /> */}
-          {/* </div> */}
-          {/* <div> */}
-            {/* <ExamsCovered /> */}
-          {/* </div> */}
-        {/* </div> */} 
-
-        {/* <div className="m-10 mt-30 gap-8">
-          <WhySection />
-        </div> */}
-
-        {/* <div className="m-10 mt-30 gap-8">
-          <HeroSection4/>
-        </div> */}
-
-        {/* <div>
-          <Herosection5/>
-        </div> */}
-
+      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
         <JoinUs />
+      </section>
 
-        <div>
-          <Testimonial />
-        </div>
+      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+        <Testimonial />
+      </section>
 
-        {/* <Pricing/> */}
-
+      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
         <FAQ />
+      </section>
+
+      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
         <SubsidiaryLogos />
       </section>
-    </div>
+    </>
   );
 }
+
+

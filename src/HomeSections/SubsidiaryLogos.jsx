@@ -2,7 +2,7 @@ import React from "react";
 
 const SubsidiaryLogos = () => {
   return (
-    <div className="py-16 bg-green-200 overflow-hidden px-4 md:px-16">
+    <div className="py-20 bg-green-200 overflow-hidden px-4 md:px-16">
       {/* Section Title */}
       <h2 className="text-center text-3xl font-bold text-gray-800 mb-10">
         Our Recent Clients & Partners

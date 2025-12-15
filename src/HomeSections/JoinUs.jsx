@@ -2,7 +2,7 @@ import React from "react";
 
 const JoinUs = () => {
   return (
-    <section className="w-full bg-white py-16 px-6 flex justify-center relative overflow-hidden">
+    <section className="w-full h-[92vh] bg-white py-16 px-6 flex justify-center relative overflow-hidden">
       
       {/* LEFT ROBOT */}
       <img
@@ -31,17 +31,17 @@ const JoinUs = () => {
         </svg>`}
       />
 
-      <div className="max-w-[800px] text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+      <div className="max-w-[800px] text-center mt-18">
+        <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
           Join Us & Build the Future With Us
         </h2>
 
-        <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 px-2 sm:px-0">
+        <p className="text-base lg:text-2xl text-gray-600 mb-8 sm:mb-10 px-2 sm:px-0">
           Be a part of our growing community of learners, creators, and innovators.
           Learn new skills, build real projects, and explore opportunities with AI-powered learning.
         </p>
 
-        <div className="flex flex-col items-center gap-2 sm:gap-3 text-gray-700 mb-8 sm:mb-10 px-2 sm:px-0">
+        <div className="text-2xl flex flex-col items-center gap-2 sm:gap-3 text-gray-700 mb-8 sm:mb-10 px-2 sm:px-0">
           <p>• Learn with expert-designed AI tools</p>
           <p>• Work on real-world inspired projects</p>
           <p>• Grow your skills with a supportive community</p>
