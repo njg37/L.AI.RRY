@@ -2,39 +2,39 @@ import React, { useEffect, useState } from 'react';
 import BackgroundVideo from '../components/BackgroundVideo.jsx';
 
 const Herosection5 = () => {
-  const fullText = ' AI-Powered';
-  const [typedText, setTypedText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [index, setIndex] = useState(0);
+  // const fullText = ' AI-Powered';
+  // const [typedText, setTypedText] = useState('');
+  // const [isDeleting, setIsDeleting] = useState(false);
+  // const [index, setIndex] = useState(0);
 
-  // Typing effect
-  useEffect(() => {
-    const typingSpeed = 150;
-    const deletingSpeed = 75;
-    const delayAfterFullText = 1000;
+  // // Typing effect
+  // useEffect(() => {
+  //   const typingSpeed = 150;
+  //   const deletingSpeed = 75;
+  //   const delayAfterFullText = 1000;
 
-    let timeout;
+  //   let timeout;
 
-    if (!isDeleting && index <= fullText.length) {
-      timeout = setTimeout(() => {
-        setTypedText(fullText.slice(0, index));
-        setIndex(index + 1);
-        if (index === fullText.length) {
-          setTimeout(() => setIsDeleting(true), delayAfterFullText);
-        }
-      }, typingSpeed);
-    } else if (isDeleting && index >= 0) {
-      timeout = setTimeout(() => {
-        setTypedText(fullText.slice(0, index));
-        setIndex(index - 1);
-        if (index === 0) {
-          setIsDeleting(false);
-        }
-      }, deletingSpeed);
-    }
+  //   if (!isDeleting && index <= fullText.length) {
+  //     timeout = setTimeout(() => {
+  //       setTypedText(fullText.slice(0, index));
+  //       setIndex(index + 1);
+  //       if (index === fullText.length) {
+  //         setTimeout(() => setIsDeleting(true), delayAfterFullText);
+  //       }
+  //     }, typingSpeed);
+  //   } else if (isDeleting && index >= 0) {
+  //     timeout = setTimeout(() => {
+  //       setTypedText(fullText.slice(0, index));
+  //       setIndex(index - 1);
+  //       if (index === 0) {
+  //         setIsDeleting(false);
+  //       }
+  //     }, deletingSpeed);
+  //   }
 
-    return () => clearTimeout(timeout);
-  }, [index, isDeleting, fullText]);
+  //   return () => clearTimeout(timeout);
+  // }, [index, isDeleting, fullText]);
 
   return (
     <div id="hero-section5" className="relative w-full">

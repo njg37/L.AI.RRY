@@ -56,7 +56,7 @@ const exams = [
 
 const ExamSection = () => {
   return (
-    <section className=" py-48 bg-[#b9f8cf] justify-end items-start ">
+    <section className=" py-40 bg-[#b9f8cf] justify-end items-start ">
       <div className="w-full mx-10 pr-17 flex flex-col lg:flex-row gap-12 ">
 
         {/* LEFT BLOCK    */}
