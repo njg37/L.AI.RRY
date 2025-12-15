@@ -1,4 +1,7 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const exams = [
   {
@@ -56,36 +59,31 @@ const exams = [
 
 const ExamSection = () => {
   return (
-    <section className=" py-40 bg-[#b9f8cf] justify-end items-start ">
-      <div className="w-full mx-10 pr-17 flex flex-col lg:flex-row gap-12 ">
+    <section className="py-40 bg-[#b9f8cf] flex flex-col">
+      <div className="px-4 sm:px-8 lg:px-10 flex flex-col lg:flex-row gap-12">
 
-        {/* LEFT BLOCK    */}
-        <div className="lg:w-1/2 ">
+        {/* LEFT BLOCK */}
+        <div className="lg:w-1/2 flex flex-col justify-center">
           <h2 className="text-5xl font-bold mb-4 leading-15">
             Get exam-ready and move ahead in your career
           </h2>
-
           <p className="text-gray-700 mb-6 leading-relaxed text-2xl">
-            Prepare smarter with AI-powered mock tests, deep performance
-            insights, and category-wise practice sets built for every exam.
+            Prepare smarter with AI-powered mock tests, deep performance insights, and category-wise practice sets built for every exam.
           </p>
-
           <button className="text-green-700 font-semibold hover:text-green-900 transition">
             Explore all exam categories →
           </button>
         </div>
 
-        {/* RIGHT BLOCK – CARDS */}
-        <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-3 overflow-hidden ">
-          {exams.map((exam, i) => (
+        {/* RIGHT BLOCK – Desktop Grid */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-6 lg:w-1/2">
+          {exams.map((exam, idx) => (
             <div
-              key={i}
-              className="h-48 rounded-2xl  p-5 bg-cover bg-center shadow-md border hover:shadow-lg transition"
+              key={idx}
+              className="h-48 rounded-2xl p-5 bg-cover bg-center shadow-md border hover:shadow-lg transition"
               style={{ backgroundImage: `url(${exam.bg})` }}
             >
-              <div
-                className={`w-12 h-12 mb-4 flex items-center justify-center rounded-xl ${exam.color}`}
-              >
+              <div className={`w-12 h-12 mb-4 flex items-center justify-center rounded-xl ${exam.color}`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-7 h-7"
@@ -96,13 +94,69 @@ const ExamSection = () => {
                   {exam.icon}
                 </svg>
               </div>
-
-              <h3 className="font-semibold text-lg text-black">
-                {exam.title}
-              </h3>
+              <h3 className="font-semibold text-lg text-black">{exam.title}</h3>
               <p className="text-sm text-black">{exam.desc}</p>
             </div>
           ))}
+        </div>
+
+        {/* Tablet Grid */}
+        <div className="hidden sm:grid lg:hidden sm:grid-cols-2 gap-6 lg:w-1/2">
+          {exams.map((exam, idx) => (
+            <div
+              key={idx}
+              className="h-60 rounded-2xl p-5 bg-cover bg-center shadow-md border hover:shadow-lg transition"
+              style={{ backgroundImage: `url(${exam.bg})` }}
+            >
+              <div className={`w-12 h-12 mb-4 flex items-center justify-center rounded-xl ${exam.color}`}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {exam.icon}
+                </svg>
+              </div>
+              <h3 className="font-semibold text-lg text-black">{exam.title}</h3>
+              <p className="text-sm text-black">{exam.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="sm:hidden mt-6 lg:w-1/2">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={16}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+          >
+            {exams.map((exam, idx) => (
+              <SwiperSlide key={idx}>
+                <div
+                  className="h-48 rounded-2xl p-5 bg-cover bg-center shadow-md border hover:shadow-lg transition"
+                  style={{ backgroundImage: `url(${exam.bg})` }}
+                >
+                  <div className={`w-12 h-12 mb-4 flex items-center justify-center rounded-xl ${exam.color}`}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-7 h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      {exam.icon}
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold text-lg text-black">{exam.title}</h3>
+                  <p className="text-sm text-black">{exam.desc}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
       </div>
