@@ -75,8 +75,8 @@ useEffect(() => {
           <span className="text-white"> mock-test platform</span>
         </h1>
 
-        <button className="mt-20 px-8 py-3 bg-green-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-green-600 transition
-            sm:px-10 sm:py-4 sm:text-xl"
+        <button className="mt-20 px-8 py-3 bg-green-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-green-600 transition
+            sm:px-8 sm:py-4 sm:text-xl"
         >
           Get Started
         </button>

@@ -2,6 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules"; // ✅ Correct import for Swiper v8+
 import "swiper/css";
+import StringAnimation from "../common/StringAnimation";
 
 const cards = [
   {
@@ -40,6 +41,7 @@ const HowItWork = () => {
         {/* Desktop Grid */}
         <div className="hidden lg:grid lg:grid-cols-4 gap-6 mt-8 flex-1">
           {cards.map((card, idx) => (
+            
             <div
               key={idx}
               className="rounded-xl text-center h-full flex items-end bg-cover bg-center bg-no-repeat"
@@ -51,12 +53,16 @@ const HowItWork = () => {
                 </h3>
               </div>
             </div>
+            
+           
           ))}
         </div>
+        <StringAnimation/>
 
         {/* Tablet Grid (2 per row) */}
         <div className="hidden sm:grid lg:hidden sm:grid-cols-2 gap-6 mt-8 flex-1">
           {cards.map((card, idx) => (
+            
             <div
               key={idx}
               className="rounded-xl text-center h-full flex items-end bg-cover bg-center bg-no-repeat"
@@ -68,6 +74,8 @@ const HowItWork = () => {
                 </h3>
               </div>
             </div>
+            
+          
           ))}
         </div>
 

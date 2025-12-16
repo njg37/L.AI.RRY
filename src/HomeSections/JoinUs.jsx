@@ -2,11 +2,11 @@ import React from "react";
 
 const JoinUs = () => {
   return (
-    <section className="w-full h-[92vh] bg-white py-16 px-6 flex justify-center relative overflow-hidden">
+    <section className="w-full min-h-[92vh] bg-white py-16 px-4 sm:px-8 lg:px-10 flex flex-col justify-center items-center relative overflow-hidden">
       
       {/* LEFT ROBOT */}
       <img
-        className="hidden md:block w-24 lg:w-32 absolute left-4 lg:left-10 top-1/2 -translate-y-1/2 opacity-90"
+        className="hidden md:block w-20 lg:w-32 absolute left-4 lg:left-10 top-1/2 -translate-y-1/2 opacity-90"
         alt="AI Robot"
         src={`data:image/svg+xml;utf8,
         <svg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'>
@@ -20,7 +20,7 @@ const JoinUs = () => {
 
       {/* RIGHT ROBOT */}
       <img
-        className="hidden md:block w-24 lg:w-32 absolute right-4 lg:right-10 top-1/2 -translate-y-1/2 opacity-90"
+        className="hidden md:block w-20 lg:w-32 absolute right-4 lg:right-10 top-1/2 -translate-y-1/2 opacity-90"
         alt="AI Robot"
         src={`data:image/svg+xml;utf8,
         <svg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'>
@@ -31,24 +31,28 @@ const JoinUs = () => {
         </svg>`}
       />
 
-      <div className="max-w-[800px] text-center mt-18">
-        <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+      <div className="max-w-[800px] text-center">
+        {/* Heading */}
+        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
           Join Us & Build the Future With Us
         </h2>
 
-        <p className="text-base lg:text-2xl text-gray-600 mb-8 sm:mb-10 px-2 sm:px-0">
+        {/* Description */}
+        <p className="text-gray-700 mb-6 sm:mb-8 leading-relaxed text-xl sm:text-2xl">
           Be a part of our growing community of learners, creators, and innovators.
           Learn new skills, build real projects, and explore opportunities with AI-powered learning.
         </p>
 
-        <div className="text-2xl flex flex-col items-center gap-2 sm:gap-3 text-gray-700 mb-8 sm:mb-10 px-2 sm:px-0">
+        {/* Key Points */}
+        <div className="flex flex-col items-center gap-2 sm:gap-3 text-gray-700 mb-6 sm:mb-8 text-lg sm:text-xl">
           <p>• Learn with expert-designed AI tools</p>
           <p>• Work on real-world inspired projects</p>
           <p>• Grow your skills with a supportive community</p>
           <p>• Unlock opportunities in tech & innovation</p>
         </div>
 
-        <button className="bg-black text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl text-base sm:text-lg font-semibold hover:bg-gray-800 transition-all">
+        {/* Button */}
+        <button className="bg-black text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-800 transition-all">
           Get Started
         </button>
       </div>
