@@ -17,13 +17,13 @@ function App() {
       <div 
       id="scroll-container"
       
-      className="h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+      className="h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth md:scroll-smooth md:snap-y md:snap-mandatory">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
         </Routes>
-      <Footer />
+        <Footer />
       </div>
 
       {/* NORMAL FLOW FOOTER (NO SNAP) */}

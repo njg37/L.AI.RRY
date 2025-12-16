@@ -91,13 +91,13 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
-
+/* 
 .clip-triangle {
   clip-path: polygon(20% 0%, 0% 100%, 10000% 100%);
-} */ */
+}
 {
 
-}
+} */
 
 /* In your global CSS (index.css / tailwind.css) */
 
@@ -118,6 +118,14 @@ html, body {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+}
+
+/* New media query for mobile */
+@media (max-width: 767px) {
+  #scroll-container {
+    scroll-snap-type: none;
+    /* scroll-behavior: smooth; */
+  }
 }
 
 @media (min-width: 1024px) {

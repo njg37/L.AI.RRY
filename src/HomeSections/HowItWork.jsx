@@ -39,7 +39,7 @@ const HowItWork = () => {
         </p>
 
         {/* Desktop Grid */}
-        <div className="hidden lg:grid lg:grid-cols-4 gap-6 mt-8 flex-1">
+        <div className="hidden lg:grid lg:grid-cols-4 gap-6  flex-1">
           {cards.map((card, idx) => (
             
             <div
@@ -57,7 +57,8 @@ const HowItWork = () => {
            
           ))}
         </div>
-        <StringAnimation/>
+       
+        {/* <StringAnimation/> */}
 
         {/* Tablet Grid (2 per row) */}
         <div className="hidden sm:grid lg:hidden sm:grid-cols-2 gap-6 mt-8 flex-1">

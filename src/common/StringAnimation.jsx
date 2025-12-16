@@ -55,6 +55,7 @@ const StringAnimation = () => {
     d="M 0 100 Q 500 100 1000 100"
     stroke="green"
     fill="transparent"
+    z-index="1000"
   />
 </svg>
 

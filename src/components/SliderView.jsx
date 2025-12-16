@@ -27,7 +27,7 @@ const SliderView = () => {
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         infinite: false,
         dots: true,
@@ -49,7 +49,7 @@ const SliderView = () => {
     },
   ]};
   return (
-    <div>
+    // <div>
     <div className="  pt-15 ">
       
         {/* <Slider {...settings}> */}
@@ -85,7 +85,7 @@ const SliderView = () => {
     </div>
     
     
-    </div>
+    // {/* </div> */}
   );
 };
 

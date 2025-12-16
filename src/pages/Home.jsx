@@ -13,11 +13,11 @@ export default function Home() {
     <>
       <section className="snap-start scroll-mt-[82px] bg-gradient-to-r from-blue-700 to-purple-700">
         <Herosection5 />
-      </section>
-
-      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
         <ExamsCovered />
       </section>
+
+      {/* <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+      </section> */}
 
       <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
         <HowItWork />

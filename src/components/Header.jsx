@@ -63,7 +63,7 @@ export default function Header() {
           </Link>
           <Link
             to="/learn"
-            className="flex items-center bg-green-500 px-4 py-2 rounded-full hover:bg-blue-600 transition"
+            className="flex items-center bg-green-500 px-4 py-2 rounded-full hover:bg-green-600 transition"
           >
             Get Started
           </Link>
@@ -108,9 +108,9 @@ export default function Header() {
           </Link>
           <Link
             to="/learn"
-            className="bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-600"
+            className="bg-green-500 text-white px-4 py-2 rounded-full text-center hover:bg-blue-600"
           >
-            Sign-in
+            Get Started
           </Link>
         </nav>
       </div>
