@@ -11,41 +11,49 @@ import SubsidiaryLogos from "../HomeSections/SubsidiaryLogos.jsx";
 export default function Home() {
   return (
     <>
-      <section className="snap-start scroll-mt-[82px] bg-gradient-to-r from-blue-700 to-purple-700">
+      <section className="snap-start scroll-mt-[64px] bg-gradient-to-r from-blue-700 to-purple-700">
         <Herosection5 />
         <ExamsCovered />
       </section>
 
-      {/* <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
-      </section> */}
-
-      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+      <section
+        id="how-it-work"
+        className="snap-start scroll-mt-[64px] bg-[#ebf0f4]"
+      >
         <HowItWork />
       </section>
 
-      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+      <section
+        id="exam-section"
+        className="snap-start scroll-mt-[64px] bg-[#ebf0f4]"
+      >
         <ExamSection />
       </section>
 
-      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+      <section
+        id="join-us"
+        className="snap-start scroll-mt-[64px] bg-[#ebf0f4]"
+      >
         <JoinUs />
       </section>
 
-      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+      <section
+        id="testimonials"
+        className="snap-start scroll-mt-[64px] bg-[#ebf0f4]"
+      >
         <Testimonial />
       </section>
 
-      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+      <section
+        id="faq"
+        className="snap-start scroll-mt-[64px] bg-[#ebf0f4]"
+      >
         <FAQ />
       </section>
 
-      <section className="snap-start scroll-mt-[var(--header-h)] bg-[#ebf0f4]">
+      <section className="snap-start scroll-mt-[64px] bg-[#ebf0f4]">
         <SubsidiaryLogos />
       </section>
     </>
   );
 }
-
-
-
-

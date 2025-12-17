@@ -7,7 +7,6 @@ export default function Header() {
 
   useEffect(() => {
     const scrollContainer = document.getElementById("scroll-container");
-
     if (!scrollContainer) return;
 
     const handleScroll = () => {
@@ -15,13 +14,20 @@ export default function Header() {
     };
 
     scrollContainer.addEventListener("scroll", handleScroll);
-
-    return () => {
-      scrollContainer.removeEventListener("scroll", handleScroll);
-    };
+    return () => scrollContainer.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (!section) return;
 
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    setOpen(false);
+  };
 
   return (
     <header
@@ -30,46 +36,56 @@ export default function Header() {
       }`}
     >
       <div className="flex justify-between items-center px-8 py-2 max-[900px]:px-4">
+        {/* LOGO */}
         <Link to="/" className="flex items-center select-none">
           <img
             src="/public/images/logo.png"
             alt="L.AI.RRY"
             className="w-12 h-12 max-[900px]:w-10 max-[900px]:h-10"
           />
-          <span className="font-bold ml-2 transition-colors duration-500">
+          <span className="font-bold ml-2">
             <span className="text-blue-500">L.</span>
             <span className="text-black">AI</span>
             <span className="text-blue-500">.RRY</span>
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* ================= DESKTOP MENU ================= */}
         <nav
-          className={`hidden md:flex items-center gap-7 transition-colors duration-500 ${
+          className={`hidden md:flex items-center gap-6 ${
             scrolled ? "text-black" : "text-white"
           }`}
         >
-          <Link to="/" className="flex items-center h-full">
-            Home
-          </Link>
-          <Link to="/about" className="flex items-center h-full">
-            About
-          </Link>
-          <Link to="/pricing" className="flex items-center h-full">
-            Pricing
-          </Link>
-          <Link to="/contact" className="flex items-center h-full">
-            Contact
-          </Link>
+          <button onClick={() => scrollToSection("how-it-work")}>
+            How It Works
+          </button>
+
+          <button onClick={() => scrollToSection("exam-section")}>
+            Exam Section
+          </button>
+
+          <button onClick={() => scrollToSection("join-us")}>
+            Join Us
+          </button>
+
+          <button onClick={() => scrollToSection("testimonials")}>
+            Testimonials
+          </button>
+
+          <button onClick={() => scrollToSection("faq")}>
+            FAQ
+          </button>
+
+          {/* GET STARTED */}
           <Link
             to="/learn"
-            className="flex items-center bg-green-500 px-4 py-2 rounded-full hover:bg-green-600 transition"
+            className="ml-4 flex items-center bg-green-500 px-4 py-2 rounded-full hover:bg-green-600 transition text-white"
           >
             Get Started
           </Link>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* ================= MOBILE ☰ BUTTON ================= */}
         <button
           className={`block md:hidden text-3xl ${
             scrolled ? "text-black" : "text-white"
@@ -79,36 +95,35 @@ export default function Header() {
           ☰
         </button>
 
-        {/* Mobile Navigation */}
+        {/* ================= MOBILE MENU ================= */}
         <nav
-          className={`absolute top-full right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg flex flex-col gap-4 p-4 transition-all duration-300 md:hidden ${
+          className={`absolute top-full right-0 mt-2 w-64 bg-white border rounded-lg shadow-lg flex flex-col p-4 gap-4 md:hidden ${
             open ? "block" : "hidden"
           }`}
         >
-          <Link to="/" className="text-black font-medium hover:text-green-500">
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="text-black font-medium hover:text-green-500"
-          >
-            About
-          </Link>
-          <Link
-            to="/pricing"
-            className="text-black font-medium hover:text-green-500"
-          >
-            Pricing
-          </Link>
-          <Link
-            to="/contact"
-            className="text-black font-medium hover:text-green-500"
-          >
-            Contact
-          </Link>
+          <button onClick={() => scrollToSection("how-it-work")}>
+            How It Works
+          </button>
+
+          <button onClick={() => scrollToSection("exam-section")}>
+            Exam Section
+          </button>
+
+          <button onClick={() => scrollToSection("join-us")}>
+            Join Us
+          </button>
+
+          <button onClick={() => scrollToSection("testimonials")}>
+            Testimonials
+          </button>
+
+          <button onClick={() => scrollToSection("faq")}>
+            FAQ
+          </button>
+
           <Link
             to="/learn"
-            className="bg-green-500 text-white px-4 py-2 rounded-full text-center hover:bg-blue-600"
+            className="bg-green-500 text-white px-4 py-2 rounded-full text-center hover:bg-green-600"
           >
             Get Started
           </Link>
