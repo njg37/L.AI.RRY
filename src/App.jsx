@@ -20,8 +20,8 @@ function App() {
       className="h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth md:scroll-smooth md:snap-y md:snap-mandatory">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/pricing" element={<Pricing />} />
+          <Route path="/about" element={<About />} /> */}
         </Routes>
         <Footer />
       </div>

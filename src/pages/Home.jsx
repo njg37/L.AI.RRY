@@ -51,9 +51,9 @@ export default function Home() {
         <FAQ />
       </section>
 
-      <section className="snap-start scroll-mt-[64px] bg-[#ebf0f4]">
+      {/* <section className="snap-start scroll-mt-[64px] bg-[#ebf0f4]">
         <SubsidiaryLogos />
-      </section>
+      </section> */}
     </>
   );
 }

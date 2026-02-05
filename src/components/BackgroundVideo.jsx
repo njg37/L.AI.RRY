@@ -43,45 +43,74 @@ useEffect(() => {
 
 
   return (
-    <div className="relative w-full h-screen overflow-hidden shadow-xl">
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      >
-        <source
-          src="../../public/video/HeroSection5video.mp4"
-          type="video/mp4"
-        />
-      </video>
+<div className="relative w-full h-screen overflow-hidden shadow-xl font-[Poppins]">
+  
+  {/* Background Video */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover"
+  >
+    <source
+      src="/video/HeroSection5video.mp4"
+      type="video/mp4"
+    />
+  </video>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+  {/* Gradient + Glass Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70 backdrop-blur-[2px]"></div>
 
-      {/* Foreground Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight
-            md:text-4xl sm:text-3xl xs:text-2xl max-w-4xl"
-        >
-          L.<span className="text-green-500">AI</span>.RRY:{' '}
-          is an intelligent,
-          <span className="text-green-500">
-            {typedText}
-            <span className="border-r-2 border-green-500 animate-pulse ml-1"></span>
-          </span>
-          <span className="text-white"> mock-test platform</span>
-        </h1>
+  {/* Foreground Content */}
+  <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
 
-        <button className="mt-20 px-8 py-3 bg-green-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-green-600 transition
-            sm:px-8 sm:py-4 sm:text-xl"
-        >
-          Get Started
-        </button>
-      </div>
-    </div>
+    {/* Heading */}
+    <h1 className="text-5xl lg:text-5xl md:text-4xl sm:text-3xl xs:text-2xl font-extrabold text-white leading-tight max-w-4xl drop-shadow-lg">
+      
+      {/* Logo Styled */}
+      <span className="font-black tracking-wide">
+        <span className="text-blue-500">L.</span>
+        <span className="text-gray-900">
+          AI
+        </span>
+        <span className="text-blue-500">.RRY</span>
+      </span>{" "}
+      
+      is an intelligent,{" "}
+      
+      {/* Typed Section */}
+      <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+        {typedText}
+        <span className="border-r-2 border-blue-400 animate-pulse ml-1"></span>
+      </span>
+      
+      <span className="text-gray-200"> mock-test platform</span>
+    </h1>
+
+    {/* Subtitle */}
+    {/* <p className="mt-6 text-gray-300 text-lg md:text-base max-w-2xl leading-relaxed">
+      Practice smarter, analyze performance instantly, and level up your exam preparation with AI-powered insights.
+    </p> */}
+
+    {/* Animated Gradient Button */}
+    <button
+      className="relative mt-16 px-10 py-4 text-lg font-semibold rounded-full text-white overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110"
+    >
+      
+      {/* Moving Gradient Background */}
+      <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-500 bg-[length:200%_100%] animate-gradientMove"></span>
+
+      {/* Shine Effect */}
+      <span className="absolute inset-0 opacity-0 group-hover:opacity-40 bg-gradient-to-r from-transparent via-white to-transparent animate-shine"></span>
+
+      {/* Button Text */}
+      <span className="relative z-10">Get Started</span>
+    </button>
+
+  </div>
+</div>
+
   );
 };
 
