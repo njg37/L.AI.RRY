@@ -111,7 +111,7 @@ export default function Header() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-emerald-400 rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
             <img
-              src="/public/images/logo.png"
+              src="/images/logo.png"
               alt="L.AI.RRY"
               className="w-8 h-8 max-[900px]:w-10 max-[900px]:h-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 relative z-10 "
             />

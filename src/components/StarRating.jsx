@@ -6,10 +6,10 @@ const StarRating = ({rating}) => {
     <div className='flex gap-2 items-center w-3 h-4 '>
       
         {[...Array(rating.rating)].map((_,i)=>
-        (<img key={i} src='../../public/images/grey-star-15595.jpg'/>)
+        (<img key={i} src='/images/grey-star-15595.jpg'/>)
         )}
         {[...Array(5-rating.rating)].map((_,i)=>
-        (<img key={i} src='../../public/images/star-7207.jpg'/>)
+        (<img key={i} src='/images/star-7207.jpg'/>)
         )}
           <p className='ml-2'>({rating.rateScore})</p>
     </div>

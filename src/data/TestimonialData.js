@@ -7,7 +7,7 @@ export const TestimonialData=[
         rating:4,
         rateScore:"4/5",
         
-        linkImg:'../../public/images/HeroSection4 Image1.jpg',
+        linkImg:'/images/HeroSection4 Image1.jpg',
         date:"11/12/2025"
     },
     {
@@ -17,7 +17,7 @@ export const TestimonialData=[
         rating:4,
         rateScore:"4/5",
         
-        linkImg:'../../public/images/HeroSection4 Image2.jpg',
+        linkImg:'/images/HeroSection4 Image2.jpg',
         date:"11/12/2025"
     },
     {
@@ -27,7 +27,7 @@ export const TestimonialData=[
         rating:5,
         rateScore:"5/5",
         
-        linkImg:'../../public/images/HeroSection4 Image3.jpg',
+        linkImg:'/images/HeroSection4 Image3.jpg',
         date:"11/12/2025"
     },
     {
@@ -37,7 +37,7 @@ export const TestimonialData=[
         rating:4,
         rateScore:"4/5",
         
-        linkImg:'../../public/images/HeroSection4 Image4.jpg',
+        linkImg:'/images/HeroSection4 Image4.jpg',
         date:"11/12/2025"
     },
         {
@@ -47,7 +47,7 @@ export const TestimonialData=[
         rating:4,
         rateScore:"4/5",
         
-        linkImg:'../../public/images/HeroSection4 Image1.jpg',
+        linkImg:'/images/HeroSection4 Image1.jpg',
         date:"11/12/2025"
     },
     {
@@ -57,7 +57,7 @@ export const TestimonialData=[
         rating:4,
         rateScore:"4/5",
         
-        linkImg:'../../public/images/HeroSection4 Image2.jpg',
+        linkImg:'/images/HeroSection4 Image2.jpg',
         date:"11/12/2025"
     },
     {
@@ -67,7 +67,7 @@ export const TestimonialData=[
         rating:5,
         rateScore:"5/5",
         
-        linkImg:'../../public/images/HeroSection4 Image3.jpg',
+        linkImg:'/images/HeroSection4 Image3.jpg',
         date:"11/12/2025"
     },
     {
@@ -77,7 +77,7 @@ export const TestimonialData=[
         rating:4,
         rateScore:"4/5",
         
-        linkImg:'../../public/images/HeroSection4 Image4.jpg',
+        linkImg:'/images/HeroSection4 Image4.jpg',
         date:"11/12/2025"
     },
     
