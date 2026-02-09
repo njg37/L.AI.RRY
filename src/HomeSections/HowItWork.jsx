@@ -152,23 +152,26 @@ const HowItWork = () => {
       </div>
 
       <div className="px-4 sm:px-8 lg:px-10 py-6 sm:py-12 flex-1 flex flex-col relative z-10">
-        <div ref={titleRef} className={`transition-all duration-1000 ${titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-left mb-4 text-gray-900">
+        <div ref={titleRef} className={`transition-all duration-1000 ${titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} `}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-left mt-24 md:mt-8 lg:mt-8 mb-4 text-gray-900">
             How L.Ai.RRY <span className="bg-gradient-to-r from-blue-600 via-emerald-600 to-amber-600 bg-clip-text text-transparent animate-gradient-text">Elevates</span> Your Learning Journey
           </h2>
-          <p className="text-gray-600 mb-6 leading-relaxed text-xl sm:text-xl">
+          <p className="text-gray-600 mb-6 leading-relaxed text-xl sm:text-xl ">
             Prepare smarter with AI-powered mock tests, deep performance insights, <br className="hidden sm:block" /> and category-wise practice sets built for every exam.
           </p>
         </div>
 
-        {/* Desktop */}
-        <div ref={cardsRef} className="hidden lg:grid lg:grid-cols-4 gap-6 flex-1">
-          {desktopCards}
-        </div>
+        {/* Wrap both desktop and tablet in a single ref container */}
+        <div ref={cardsRef} className="flex-1">
+          {/* Desktop */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-6">
+            {desktopCards}
+          </div>
 
-        {/* Tablet */}
-        <div className="hidden sm:grid lg:hidden sm:grid-cols-2 gap-6 mt-8 flex-1">
-          {cards.map((card, idx) => <Card key={idx} card={card} index={idx} isVisible={cardsVisible} />)}
+          {/* Tablet */}
+          <div className="hidden sm:grid lg:hidden sm:grid-cols-2 gap-6 mt-8">
+            {cards.map((card, idx) => <Card key={idx} card={card} index={idx} isVisible={cardsVisible} />)}
+          </div>
         </div>
 
         {/* Mobile */}

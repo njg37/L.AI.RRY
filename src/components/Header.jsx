@@ -82,6 +82,26 @@ export default function Header() {
     { label: "Testimonials", id: "testimonials", color: "rose" },
     { label: "FAQ", id: "faq", color: "blue" },
   ];
+const hoverText = {
+  blue: "hover:text-blue-600",
+  emerald: "hover:text-emerald-600",
+  amber: "hover:text-amber-600",
+  rose: "hover:text-rose-600",
+};
+
+const underlineBg = {
+  blue: "bg-blue-600",
+  emerald: "bg-emerald-600",
+  amber: "bg-amber-600",
+  rose: "bg-rose-600",
+};
+
+const hoverBg = {
+  blue: "hover:bg-blue-50",
+  emerald: "hover:bg-emerald-50",
+  amber: "hover:bg-amber-50",
+  rose: "hover:bg-rose-50",
+};
 
   return (
     <header
@@ -113,10 +133,10 @@ export default function Header() {
             <img
               src="/images/logo.png"
               alt="L.AI.RRY"
-              className="w-8 h-8 max-[900px]:w-10 max-[900px]:h-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 relative z-10 "
+              className="w-6 h-6 max-[900px]:w-10 max-[900px]:h-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 relative z-10 -translate-y-0.5"
             />
           </div>
-          <span className="font-bold ml-2 text-lg">
+          <span className="font-bold ml-0.5 text-lg">
             <span className="text-blue-600 inline-block group-hover:scale-110 transition-transform duration-300">L.</span>
             <span className="text-gray-900 inline-block group-hover:scale-110 transition-transform duration-300 delay-75">AI</span>
             <span className="text-blue-600 inline-block group-hover:scale-110 transition-transform duration-300 delay-150">.RRY</span>
@@ -134,17 +154,21 @@ export default function Header() {
               key={index}
               ref={(el) => (navLinksRef.current[index] = el)}
               onClick={() => scrollToSection(item.id)}
-              className={`relative hover:text-${item.color}-600 transition-colors duration-200 group`}
+             className={`relative transition-colors duration-200 group ${hoverText[item.color]}`}
+
               style={{ opacity: 0 }} // Prevent flicker
             >
               <span className="relative z-10">{item.label}</span>
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-${item.color}-600 group-hover:w-full transition-all duration-300`}></span>
+              <span
+  className={`absolute bottom-0 left-0 w-0 h-0.5 ${underlineBg[item.color]} group-hover:w-full transition-all duration-300`}
+></span>
+
             </button>
           ))}
 
           <Link
             ref={getStartedRef}
-            to="/learn"
+            to="/"
             className="ml-4 flex items-center bg-gradient-to-r from-blue-600 to-emerald-600 px-5 py-2.5 rounded-full hover:from-blue-700 hover:to-emerald-700 transition-all duration-300 text-white font-semibold shadow-md hover:shadow-xl transform hover:scale-110 hover:-translate-y-0.5 relative overflow-hidden group"
             style={{ opacity: 0 }} // Prevent flicker
           >
@@ -180,7 +204,8 @@ export default function Header() {
             <button 
               key={index}
               onClick={() => scrollToSection(item.id)}
-              className={`relative z-10 text-left text-gray-700 hover:text-${item.color}-600 hover:bg-${item.color}-50 px-4 py-3 rounded-xl transition-all duration-300 hover:translate-x-2`}
+             className={`relative z-10 text-left text-gray-700 px-4 py-3 rounded-xl transition-all duration-300 hover:translate-x-2 ${hoverText[item.color]} ${hoverBg[item.color]}`}
+
             >
               {item.label}
             </button>

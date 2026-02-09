@@ -1,53 +1,45 @@
 import React from "react";
-import Slider from "react-slick";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "./swiper.css";
 import { ExamsCoveredData } from "../data/ExamsCoveredData";
 import ExamsCoveredCard from "./ExamsCoveredCard";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const ExamsSliderView = () => {
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 9000,
-    slidesToShow: 10,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    pauseOnHover: false,
-    cssEase: "linear",
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-  };
+  // Duplicate slides for infinite scrolling
+  const slides = [...ExamsCoveredData, ...ExamsCoveredData];
 
   return (
-    <div className="-mt-22 ">
-      <Slider {...settings}>
-        {ExamsCoveredData.map((item) => (
-          <div key={item.id} className="px-3 ">
+    <div className="-mt-22">
+      <Swiper
+        modules={[Autoplay, FreeMode]}
+        freeMode={{ enabled: true, momentum: false }}
+        spaceBetween={20}
+        slidesPerView={8}
+        loop={true}
+        speed={5000} // adjust for smooth speed
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
+        }}
+        loopAdditionalSlides={ExamsCoveredData.length} // ensures enough slides for looping
+        breakpoints={{
+          0: { slidesPerView: 3, spaceBetween: 10 },
+          480: { slidesPerView: 4, spaceBetween: 15 },
+          768: { slidesPerView: 6, spaceBetween: 20 },
+          1024: { slidesPerView: 7, spaceBetween: 20 },
+          1280: { slidesPerView: 10, spaceBetween: 20 },
+        }}
+      >
+        {slides.map((item, index) => (
+          <SwiperSlide key={`slide-${index}`}>
             <ExamsCoveredCard exam={item} />
-          </div>
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
     </div>
   );
 };

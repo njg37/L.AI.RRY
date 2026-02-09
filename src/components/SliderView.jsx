@@ -1,91 +1,52 @@
 import React from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import Card from "./Card";
-import { HeroSection4CardData } from "../data/HeroSection4CardData";
-import { TestimonialData } from "../data/TestimonialData";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
 import TestimonialCard from "../components/TestimonialCard";
-import { ExamsCoveredData } from "../data/ExamsCoveredData";
-import ExamsCoveredCard from "./ExamsCoveredCard";
+import { TestimonialData } from "../data/TestimonialData";
 
 const SliderView = () => {
-  var settings = {
-    dots: false,
-    arrows:false,
-    infinite: true,
-    speed: 5000 ,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0, // 2 seconds
-    pauseOnHover: false,
-      
-    cssEase: "linear",
-  
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: false,
-        dots: true,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ]};
   return (
-    // <div>
-    <div className="  pt-15 ">
-      
-        {/* <Slider {...settings}> */}
-        {/* {HeroSection4CardData.map(heroSection4CardData=><Card heroSection4CardData={heroSection4CardData} />)} */}
-        {/* <div className=''>
-
-                            {TestimonialData.map(testimonialData=><TestimonialCard testimonialData={testimonialData} />)}
-              </div> */}
-
-        {/* <Card />
-                <Card/>
-                <Card/>
-                <Card/> */}
-        {/* </Slider> */}
-
-        <Slider {...settings}>
-          {TestimonialData.map((testimonialData) => (
-            <div
-             key={testimonialData.id} className="px-3">
-              <TestimonialCard testimonialData={testimonialData} />
-               </div>
-          ))}
-          {/* {ExamsCoveredData.map((examsCoveredData) => (
-            <div
-             key={examsCoveredData.id} className="px-3">
-              <ExamsCoveredCard testimonialData={examsCoveredData} />
-               </div>
-          ))} */}
-
-        </Slider>
-
-      
+    <div className="pt-15">
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={20}
+        slidesPerView={3}
+        loop={true}
+        speed={5000}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+        }}
+        freeMode={true}
+        freeModeMomentum={false}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 16,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1280: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+        }}
+      >
+        {TestimonialData.map((testimonialData) => (
+          <SwiperSlide key={testimonialData.id}>
+            <TestimonialCard testimonialData={testimonialData} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
-    
-    
-    // {/* </div> */}
   );
 };
 

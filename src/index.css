@@ -137,3 +137,43 @@ html, body {
 
 
 
+
+
+
+/* .slick-slide > div {
+  margin: 0 8px;
+}
+
+.slick-list {
+  margin: 0 -8px;
+} */
+
+
+
+
+/* ===== Custom Scrollbar - Minimal Logo Theme ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9; /* slate-100 */
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #86857b, #10b981); /* blue to emerald */
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #86857b, #059669); /* darker blue to emerald */
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #86857b #f1f5f9;
+}
