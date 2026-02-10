@@ -263,7 +263,7 @@ const ExamSection = () => {
 
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes gradientText {
           0%, 100% {
             background-position: 0% 50%;

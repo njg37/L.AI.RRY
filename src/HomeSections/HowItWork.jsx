@@ -186,7 +186,7 @@ const HowItWork = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .paused-anim * { animation-play-state: paused !important; }
         
         @keyframes floatSlow { 0%, 100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(30px, -30px, 0); } }

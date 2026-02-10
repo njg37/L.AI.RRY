@@ -1,8 +1,10 @@
 import React from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/autoplay';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/autoplay";
+
 import TestimonialCard from "../components/TestimonialCard";
 import { TestimonialData } from "../data/TestimonialData";
 
@@ -10,9 +12,7 @@ const SliderView = () => {
   return (
     <div className="pt-15">
       <Swiper
-        modules={[Autoplay]}
-        spaceBetween={20}
-        slidesPerView={3}
+        modules={[Autoplay, FreeMode]}
         loop={true}
         speed={5000}
         autoplay={{
@@ -20,7 +20,7 @@ const SliderView = () => {
           disableOnInteraction: false,
         }}
         freeMode={true}
-        freeModeMomentum={false}
+        grabCursor={false}
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -40,8 +40,8 @@ const SliderView = () => {
           },
         }}
       >
-        {TestimonialData.map((testimonialData) => (
-          <SwiperSlide key={testimonialData.id}>
+        {TestimonialData.map((testimonialData, index) => (
+          <SwiperSlide key={`${testimonialData.id}-${index}`}>
             <TestimonialCard testimonialData={testimonialData} />
           </SwiperSlide>
         ))}
