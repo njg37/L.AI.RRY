@@ -39,13 +39,13 @@ export const ExamsCoveredData = [
     id: 7,
     title: "Microsoft",
     desc: "Complete AI-based mock tests for SSC CGL",
-    img: "/images/Microsoft-Logo.png",
+    img: "/images/microsoft.png",
   },
   {
     id: 8,
     title: "SalesforceSa",
     desc: "Latest pattern tests with analysis",
-    img: "/images/Salesforce-Logo.png",
+    img: "/images/salesforce.png",
   },
   {
     id: 9,

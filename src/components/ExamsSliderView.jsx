@@ -31,7 +31,7 @@ const ExamsSliderView = () => {
           480: { slidesPerView: 4, spaceBetween: 15 },
           768: { slidesPerView: 6, spaceBetween: 20 },
           1024: { slidesPerView: 7, spaceBetween: 20 },
-          1280: { slidesPerView: 10, spaceBetween: 20 },
+          1280: { slidesPerView: 10, spaceBetween: 20},
         }}
       >
         {slides.map((item, index) => (

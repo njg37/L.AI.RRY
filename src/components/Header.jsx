@@ -138,7 +138,10 @@ const hoverBg = {
           </div>
           <span className="font-bold ml-0.5 text-lg">
             <span className="text-blue-600 inline-block group-hover:scale-110 transition-transform duration-300">L.</span>
-            <span className="text-gray-900 inline-block group-hover:scale-110 transition-transform duration-300 delay-75">AI</span>
+<span className={`${scrolled ? 'text-gray-900' : 'bg-gradient-to-r from-blue-600 via-emerald-600 to-amber-600 bg-clip-text text-transparent animate-gradient-text'} inline-block group-hover:scale-110 transition-transform duration-300 delay-75`}>
+  AI
+</span>
+
             <span className="text-blue-600 inline-block group-hover:scale-110 transition-transform duration-300 delay-150">.RRY</span>
           </span>
         </Link>

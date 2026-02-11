@@ -71,7 +71,7 @@ useEffect(() => {
       {/* Logo Styled */}
       <span className="font-black tracking-wide">
         <span className="text-blue-500">L.</span>
-        <span className="text-gray-900">
+        <span className="bg-gradient-to-r from-blue-600 via-emerald-600 to-amber-600 bg-clip-text text-transparent animate-gradient-text">
           AI
         </span>
         <span className="text-blue-500">.RRY</span>
